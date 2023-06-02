@@ -77,7 +77,7 @@
                   <Group type="103" groupAlignment="2" attributes="0">
                       <Component id="btn_prin" alignment="2" max="32767" attributes="0"/>
                       <Component id="btn_inventario" alignment="2" max="32767" attributes="0"/>
-                      <Component id="btn_returns" alignment="2" max="32767" attributes="0"/>
+                      <Component id="btn_Vender" alignment="2" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -110,7 +110,7 @@
                           <Component id="btn_prin" min="-2" pref="52" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
-                              <Component id="btn_returns" min="-2" pref="52" max="-2" attributes="0"/>
+                              <Component id="btn_Vender" min="-2" pref="52" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
@@ -190,7 +190,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_inventarioActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btn_returns">
+            <Component class="javax.swing.JButton" name="btn_Vender">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="6b" green="53" red="28" type="rgb"/>
@@ -201,7 +201,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Reportes"/>
+                <Property name="text" type="java.lang.String" value="Vender"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                     <MatteColorBorder bottom="1" left="13" right="1" top="1"/>
@@ -215,7 +215,7 @@
                 <Property name="inheritsPopupMenu" type="boolean" value="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_returnsActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_VenderActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

@@ -2,6 +2,7 @@ package com.mycompany.proyecto;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
 import com.mycompany.vistas.Inventario;
 import com.mycompany.vistas.Principal;
+import com.mycompany.vistas.Vender;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
@@ -37,7 +38,7 @@ public class PanelPrincipal extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btn_prin = new javax.swing.JButton();
         btn_inventario = new javax.swing.JButton();
-        btn_returns = new javax.swing.JButton();
+        btn_Vender = new javax.swing.JButton();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,18 +84,18 @@ public class PanelPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btn_returns.setBackground(new java.awt.Color(40, 83, 107));
-        btn_returns.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_returns.setForeground(new java.awt.Color(255, 255, 255));
-        btn_returns.setText("Reportes");
-        btn_returns.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
-        btn_returns.setBorderPainted(false);
-        btn_returns.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_returns.setIconTextGap(13);
-        btn_returns.setInheritsPopupMenu(true);
-        btn_returns.addActionListener(new java.awt.event.ActionListener() {
+        btn_Vender.setBackground(new java.awt.Color(40, 83, 107));
+        btn_Vender.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_Vender.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Vender.setText("Vender");
+        btn_Vender.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
+        btn_Vender.setBorderPainted(false);
+        btn_Vender.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_Vender.setIconTextGap(13);
+        btn_Vender.setInheritsPopupMenu(true);
+        btn_Vender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_returnsActionPerformed(evt);
+                btn_VenderActionPerformed(evt);
             }
         });
 
@@ -105,7 +106,7 @@ public class PanelPrincipal extends javax.swing.JFrame {
             .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                 .addComponent(btn_prin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_inventario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_returns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btn_Vender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(menuLayout.createSequentialGroup()
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menuLayout.createSequentialGroup()
@@ -131,7 +132,7 @@ public class PanelPrincipal extends javax.swing.JFrame {
                     .addComponent(btn_prin, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(menuLayout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(btn_returns, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_Vender, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(150, 150, 150))
         );
 
@@ -176,9 +177,9 @@ public class PanelPrincipal extends javax.swing.JFrame {
         ShowJPanel(new Inventario());
     }//GEN-LAST:event_btn_inventarioActionPerformed
 
-    private void btn_returnsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_returnsActionPerformed
-//        ShowJPanel(new Returns());
-    }//GEN-LAST:event_btn_returnsActionPerformed
+    private void btn_VenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VenderActionPerformed
+        ShowJPanel(new Vender());
+    }//GEN-LAST:event_btn_VenderActionPerformed
 
     public static void main(String args[]) {
        FlatMaterialLighterIJTheme.setup();
@@ -194,9 +195,9 @@ public class PanelPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel appName;
     private javax.swing.JPanel background;
+    private javax.swing.JButton btn_Vender;
     private javax.swing.JButton btn_inventario;
     private javax.swing.JButton btn_prin;
-    private javax.swing.JButton btn_returns;
     private static javax.swing.JPanel content;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel menu;
