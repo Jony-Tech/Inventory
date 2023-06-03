@@ -23,7 +23,7 @@ public class VenderArticulo extends javax.swing.JPanel {
     }
     private void iniciarStyles(){
             JTArticulo.setText(articuloEdition.getArticulo());
-            
+            JTCantidad.putClientProperty("JTextField.placeholderText", "ingrese la cantidad a vender");
             JTPrecio.setText(articuloEdition.getPrecio());
     }
 
@@ -158,26 +158,32 @@ public class VenderArticulo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonActionPerformed
-        String articulo = JTArticulo.getText();
-        Integer cantidad = Integer.valueOf(JTCantidad.getText());
-        String precio = JTPrecio.getText();
         
-        Integer resultado = Integer.valueOf(articuloEdition.getCantidad());
-        Integer total = resultado - cantidad;
-        String cantidadFinal = String.valueOf(total);
-        InventarioP arti = articuloEdition;
-        arti.setArticulo(articulo);
-        arti.setCantidad(cantidadFinal);
-        arti.setPrecio(precio);
 
         try{
-            DAOinventario dao = new DAOInventarioImpl(); //instancia de DAOUsersImpl
+            String articulo = JTArticulo.getText();
+            Integer cantidad = Integer.valueOf(JTCantidad.getText());
+            String precio = JTPrecio.getText();
+
+            Integer resultado = Integer.valueOf(articuloEdition.getCantidad());
             
-            dao.modificar(arti);
-            
-            javax.swing.JOptionPane.showMessageDialog(this, "Articulo vendido exitosamente. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            if(resultado >= cantidad){
+                Integer total = resultado - cantidad;
+                String cantidadFinal = String.valueOf(total);
+                InventarioP arti = articuloEdition;
+                arti.setArticulo(articulo);
+                arti.setCantidad(cantidadFinal);
+                arti.setPrecio(precio);
+                DAOinventario dao = new DAOInventarioImpl(); //instancia de DAOUsersImpl
+
+                dao.modificar(arti);
+                javax.swing.JOptionPane.showMessageDialog(this, "Articulo vendido exitosamente. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                JTCantidad.setText("");
+            }else{
+                javax.swing.JOptionPane.showMessageDialog(this, "No hay hay suficientes productos disponibles de este articulo \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
         }catch(Exception e){
-            javax.swing.JOptionPane.showMessageDialog(this, "Parece que hubo un error al vender el articulo \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Necesitas agregar una cantidad para poder venderse \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
             System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_BotonActionPerformed

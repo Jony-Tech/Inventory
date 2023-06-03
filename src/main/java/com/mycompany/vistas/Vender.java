@@ -12,6 +12,7 @@ public class Vender extends javax.swing.JPanel {
     public Vender() {
         initComponents();
         LoadArticulos();
+        articuloSearch.putClientProperty("JTextField.placeholderText", "ingresa el nombre del articulo");
     }
 
     @SuppressWarnings("unchecked")
@@ -171,7 +172,7 @@ public class Vender extends javax.swing.JPanel {
                 System.out.println(e.getMessage());
             }
         }else{
-            javax.swing.JOptionPane.showMessageDialog(this, "Tiene que seleccionar un articulo a editar \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this, "Tiene que seleccionar un articulo para que pueda ser vendido \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_VenderBtnActionPerformed
 

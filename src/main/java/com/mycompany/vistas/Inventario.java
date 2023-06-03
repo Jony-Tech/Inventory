@@ -12,6 +12,7 @@ public class Inventario extends javax.swing.JPanel {
     public Inventario() {
         initComponents();
         LoadArticulos();
+        articuloSearch.putClientProperty("JTextField.placeholderText", "ingresa el nombre del articulo");
     }
 
     @SuppressWarnings("unchecked")
@@ -77,7 +78,7 @@ public class Inventario extends javax.swing.JPanel {
         Boton.setBackground(new java.awt.Color(40, 83, 107));
         Boton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Boton.setForeground(new java.awt.Color(255, 255, 255));
-        Boton.setText("Registrar");
+        Boton.setText("Buscar");
         Boton.setBorderPainted(false);
         Boton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Boton.addActionListener(new java.awt.event.ActionListener() {
@@ -218,6 +219,7 @@ public class Inventario extends javax.swing.JPanel {
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
         if (jTable1.getSelectedRow() > -1) { //validar que si este seleccionando alguna fila
+            if(javax.swing.JOptionPane.showConfirmDialog(null, "ESTA SEGURO DE ELIMINAR ESTE ARTICULO", "SALIR", javax.swing.JOptionPane.YES_NO_OPTION)==0){
             DAOinventario dao = new DAOInventarioImpl();
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             for (int i : jTable1.getSelectedRows()) {
@@ -227,6 +229,7 @@ public class Inventario extends javax.swing.JPanel {
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
+            }
             }
         } else {
             javax.swing.JOptionPane.showMessageDialog(this, "Tiene que seleccionar un articulo a eliminar \n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
